@@ -6,7 +6,6 @@ from django.views.generic import ListView, DetailView,CreateView
 # def home(request):
 #     return render(request,'index.html',{})
 
-
 class Home(ListView):
     model = About
     queryset = About.objects.all()
@@ -22,9 +21,7 @@ class Home(ListView):
         context['news'] = News.objects.order_by('-date')[:3]
         print(context['news'])
         return context
-
-
-class DetailNews(ListView):
+class NewsListView(ListView):
     model = News
     queryset = News.objects.all()
     context_object_name = 'news'
@@ -38,13 +35,10 @@ class DetailNews(ListView):
         context['aboutkeus'] = AboutKEU.objects.all()
         context['abouts'] = About.objects.all()
         return context
-
-
-class ProgramListView(ListView):
-    model = About
-    queryset = Program.objects.all()
-    context_object_name = 'programs'
-    template_name = 'programs.html'
+class DetailNews(DetailView):
+    model = News
+    context_object_name = 'news'
+    template_name = 'detail_news.html'
 
     def get_context_data(self, **kwargs):
 
@@ -52,53 +46,5 @@ class ProgramListView(ListView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
-        context['news'] = News.objects.order_by('-date')[:3]
-        return context
-
-
-class ProgramDetailView(DetailView):
-    model = About
-    queryset = Program.objects.all()
-    context_object_name = 'program'
-    template_name = 'program_detail.html'
-
-    def get_context_data(self, **kwargs):
-
-        context = super().get_context_data(**kwargs)
-        context['projects'] = Project.objects.all()
-        context['programs'] = Program.objects.all()
-        context['aboutkeus'] = AboutKEU.objects.all()
-        context['news'] = News.objects.order_by('-date')[:3]
-        return context
-
-
-class ProjectListView(ListView):
-    model = About
-    queryset = Program.objects.all()
-    context_object_name = 'programs'
-    template_name = 'projects.html'
-
-    def get_context_data(self, **kwargs):
-
-        context = super().get_context_data(**kwargs)
-        context['projects'] = Project.objects.all()
-        context['programs'] = Program.objects.all()
-        context['aboutkeus'] = AboutKEU.objects.all()
-        context['news'] = News.objects.order_by('-date')[:3]
-        return context
-
-
-class ProjectDetailView(DetailView):
-    model = About
-    queryset = Project.objects.all()
-    context_object_name = 'project'
-    template_name = 'project_detail.html'
-
-    def get_context_data(self, **kwargs):
-
-        context = super().get_context_data(**kwargs)
-        context['projects'] = Project.objects.all()
-        context['programs'] = Program.objects.all()
-        context['aboutkeus'] = AboutKEU.objects.all()
-        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
         return context
