@@ -18,4 +18,5 @@ class Home(ListView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.all()
         return context

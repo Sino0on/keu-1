@@ -45,7 +45,27 @@
             <div class="container">
                 <div class="news__content">
                     <div class="swiper">
-                        <div class="swiper-wrapper"></div>
+                        <div class="swiper-wrapper">
+                            {% for i in news %}
+
+                                    <div class="swiper-slide">
+                                            <div class="news__item item">
+                                                <div class="item__top">
+                                                    <img src="{{ i.image.url }}" alt="news-img">
+                                                </div>
+                                                <div class="item__bottom">
+                                                    <p>
+                                                        {{ i.title }}
+                                                    </p>
+                                                    <i>
+                                                        <a href="#">Read More</a>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                            {% endfor %}
+                        </div>
+
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>

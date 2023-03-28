@@ -65,21 +65,21 @@ const featuresItems = [
   },
 ];
 
-featuresItems.forEach((item) => {
-  featuresContent.innerHTML += `
-  <div class="features__item item">
-    <div class="item__top">
-        <img src="${item.img}" alt="features-img">
-        <h2 class="item__title">${item.title}</h2>
-    </div>
-    <div class="item__bottom">
-        <button>
-            About
-        </button>
-    </div>
-  </div>
-  `;
-});
+//featuresItems.forEach((item) => {
+//  featuresContent.innerHTML += `
+//  <div class="features__item item">
+//    <div class="item__top">
+//        <img src="${item.img}" alt="features-img">
+//        <h2 class="item__title">${item.title}</h2>
+//    </div>
+//    <div class="item__bottom">
+//        <button>
+//            About
+//        </button>
+//    </div>
+//  </div>
+//  `;
+//});
 
 const newsContent = document.querySelector(".swiper-wrapper");
 
@@ -101,25 +101,25 @@ const newsItems = [
   },
 ];
 
-newsItems.forEach((item) => {
-  newsContent.innerHTML += `
-    <div class="swiper-slide">
-        <div class="news__item item">
-            <div class="item__top">
-                <img src="${item.img}" alt="news-img">
-            </div>
-            <div class="item__bottom">
-                <p>
-                ${item.title}
-                </p>
-                <i>
-                    <a href="#">Read More</a>
-                </i>
-            </div>
-        </div>
-    </div>
-  `;
-});
+//newsItems.forEach((item) => {
+//  newsContent.innerHTML += `
+//    <div class="swiper-slide">
+//        <div class="news__item item">
+//            <div class="item__top">
+//                <img src="${item.img}" alt="news-img">
+//            </div>
+//            <div class="item__bottom">
+//                <p>
+//                ${item.title}
+//                </p>
+//                <i>
+//                    <a href="#">Read More</a>
+//                </i>
+//            </div>
+//        </div>
+//    </div>
+//  `;
+//});
 
 const partnersContent = document.querySelector(".partners__content");
 
@@ -131,10 +131,10 @@ const partnersItems = [
   "./assets/img/partners-img-5.png",
 ]
 
-partnersItems.forEach((item) => {
-  partnersContent.innerHTML += `
-  <div class="partners__item">
-    <img src="${item}" alt="">
-  </div>
-  `;
-});
+//partnersItems.forEach((item) => {
+//  partnersContent.innerHTML += `
+//  <div class="partners__item">
+//    <img src="${item}" alt="">
+//  </div>
+//  `;
+//});
