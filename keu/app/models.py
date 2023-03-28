@@ -29,3 +29,8 @@ class Project(Page):
 class About(Page):
     class Meta:
         pass
+
+
+class News(Page):
+    class Meta:
+        pass
