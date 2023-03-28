@@ -1,0 +1,101 @@
+.footer {
+    display: flex;
+
+    &__connect {
+        padding-top: 49px;
+        padding-bottom: 81px;
+        width: 50%;
+        background: #153695;
+        display: flex;
+        justify-content: center;
+
+        h2 {
+            @include font(31px, #ffba33, 700);
+            margin-bottom: 22px;
+        }
+    }
+
+    &__form {
+        padding-top: 33px;
+        padding-bottom: 79px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        h2 {
+            @include font(31px, #153695, 700);
+        }
+
+        form {
+            max-width: 387px;
+
+            div {
+                display: grid;
+                flex-wrap: wrap;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 7px;
+            }
+
+            label {
+                margin-top: 15px;
+                @include font(11px, #080808);
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    margin-top: 6px;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid #080808;
+                }
+            }
+
+            textarea {
+                margin-top: 13px;
+                @include font(11px, #080808);
+                width: 100%;
+                height: 150px;
+                resize: none;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid #080808;
+            }
+
+            button {
+                margin-top: 8px;
+                background: transparent;
+                border: 1px solid #153695;
+                @include font(11px, #080808);
+                width: 100%;
+                padding: 12px 0;
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        h2,
+        a {
+            @include font(11px, #ffffff, 700);
+        }
+        p {
+            @include font(11px, #ffffff, 400);
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 7px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer {
+        flex-wrap: wrap-reverse;
+
+        &__connect,
+        &__form {
+            width: 100%;
+        }
+    }
+}

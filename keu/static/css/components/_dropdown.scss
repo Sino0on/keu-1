@@ -1,0 +1,29 @@
+.dropdown {
+    position: relative;
+    &:hover {
+        .dropdown__menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        display: none;
+        background: rgba(21, 32, 64, 0.8);
+        padding: 10px 5px;
+        width: 91%;
+        top: 32px;
+        text-align: center;
+
+        a {
+            @include font(9px, #A5BBFA);
+            line-height: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

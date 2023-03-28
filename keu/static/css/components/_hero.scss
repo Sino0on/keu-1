@@ -1,0 +1,70 @@
+.hero {
+    background: url(../assets/img/hero-bg.png) no-repeat;
+    background-size: cover;
+    box-shadow: 0px -450px 500px 0px rgba(0, 0, 0, 0.8) inset;
+
+    &__content {
+        padding-top: 235px;
+        padding-bottom: 143px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        @include font(58px, #fff, 700);
+
+        span {
+            color: #ffaa00;
+        }
+    }
+
+    &__bottom {
+        margin-top: 68px;
+        @include flex(space-between, center);
+
+        button {
+            border: 1px solid #ffffff;
+            padding: 11px 86px;
+            background: transparent;
+            @include font(14px, #fff);
+            letter-spacing: 1.4px;
+        }
+
+        label {
+            border: 1px solid #ffffff;
+            padding: 11px 10px;
+            display: flex;
+            align-items: center;
+
+            input {
+                background: transparent;
+                border: none;
+                @include font(14px, #fff);
+                letter-spacing: 1.4px;
+                outline: none;
+                width: 290px;
+            }
+
+            svg {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 646px) {
+    .hero {
+        &__bottom {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .hero {
+        h1 {
+            font-size: 31px;
+            line-height: 29px;
+        }
+    }
+}

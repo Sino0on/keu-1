@@ -1,0 +1,53 @@
+.header {
+    padding: 23px 52px;
+    background: #152040;
+
+    &__burger {
+        display: none;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        h2 {
+            @include font(14px, #ffffff, 700);
+            width: 150px;
+        }
+    }
+
+    &__content {
+        @include flex(space-between, center);
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__link {
+        @include font(9px, #ffffff);
+        padding: 14px 12px;
+
+        &:hover {
+            background: #a5bbfa;
+            color: #152040;
+        }
+    }
+
+    &__lang {
+        span {
+            @include font(9px, #ffffff);
+        }
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .header {
+        &__nav {
+            display: none;
+        }
+    }
+}

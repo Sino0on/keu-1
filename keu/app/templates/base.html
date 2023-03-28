@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__content">
+            <a href="#" class="header__logo">
+                <img src="{% static './media/icons/logo.svg' %}" alt="logo">
+<!--                <img src="./media/icons/logo.svg" alt="logo">-->
+                <h2>Kyrgyz Economic University</h2>
+            </a>
+
+            <nav class="header__nav">
+                <div class="header__lang">
+                    <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+<!--                    <img src="./media/icons/arrow.svg" alt="arrow">-->
+                    <span>RU</span>
+                </div>
+                <div class="header__item">
+                    <a class="header__link" href="#">Home</a>
+                </div>
+                <div class="header__item dropdown">
+                    <a class="header__link" href="#">About KEU</a>
+                    <div class="dropdown__menu">
+                        {% for i in aboutkeus %}
+                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                        {% endfor%}
+<!--                        <a href="#" class="dropdown__link">Mission, Vision, Value</a>-->
+<!--                        <a href="#" class="dropdown__link">Awards & Achievement</a>-->
+<!--                        <a href="#" class="dropdown__link">Alumni Success stories</a>-->
+                    </div>
+                </div>
+                <div class="header__item">
+                    <a class="header__link" href="#">News</a>
+                </div>
+                <div class="header__item dropdown">
+                    <a class="header__link" href="#">Academic Programs</a>
+                    <div class="dropdown__menu">
+                        {% for i in programs %}
+                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                        {% endfor%}
+<!--                        <a href="#" class="dropdown__link">Arasmus + program</a>-->
+<!--                        <a href="#" class="dropdown__link">MEVLANA academic exchange program</a>-->
+<!--                            <a href="#" class="dropdown__link">Intermational scholarchip program</a>-->
+                    </div>
+                </div>
+                <div class="header__item dropdown">
+                    <a class="header__link" href="#">International projects</a>
+                    <div class="dropdown__menu">
+                        <a href="#" class="dropdown__link">Establishing Master Programmes in HRM and Talent Development
+                            in Central Asia</a>
+                        <a href="#" class="dropdown__link">Erasmus+ project “Enhancing Green Economy in 3 countries of
+                            Asia</a>
+                    </div>
+                </div>
+                <div class="header__item dropdown">
+                    <a class="header__link" href="#">About</a>
+                    <div class="dropdown__menu">
+                        {% for i in abouts %}
+                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                        {% endfor%}
+<!--                        <a href="#" class="dropdown__link">Admission for Degree</a>-->
+<!--                        <a href="#" class="dropdown__link">HEI Partners</a>-->
+<!--                        <a href="#" class="dropdown__link">KEU leadership</a>-->
+<!--                        <a href="#" class="dropdown__link">Research</a>-->
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header__burger burger">
+                <svg class="burger__open" width="28" height="23" viewBox="0 0 28 23" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="5" rx="2.5" fill="white" />
+                    <rect y="9" width="28" height="5" rx="2.5" fill="white" />
+                    <rect y="18" width="28" height="5" rx="2.5" fill="white" />
+                </svg>
+                <svg class="burger__close" width="23" height="23" viewBox="0 0 23 23" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.12256 20.7197L20.6001 2.5" stroke="white" stroke-width="4" stroke-linecap="round" />
+                    <path d="M2.12258 2.78027L20.6001 21" stroke="white" stroke-width="4" stroke-linecap="round" />
+                </svg>
+
+                <div class="burger__menu">
+                    <div class="burger__item">
+                        <a href="" class="burger__link">Home</a>
+                    </div>
+                    <div class="burger__item dropdown">
+                        <div class="burger__link">
+                            About KEU
+                            <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
+                        </div>
+
+                        <div class="burger__dropdown">
+                            <a href="#" class="burger__suplink">KEU-brief history</a>
+                            <a href="#" class="burger__suplink">Mission, Vision, Value</a>
+                            <a href="#" class="burger__suplink">Awards & Achievement</a>
+                            <a href="#" class="burger__suplink">Alumni Success stories</a>
+                        </div>
+                    </div>
+                    <div class="burger__item">
+                        <a href="#" class="burger__link">News</a>
+                    </div>
+                    <div class="burger__item dropdown">
+                        <div class="burger__link">
+                            Academic Programs
+                            <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
+                        </div>
+                        <div class="burger__dropdown">
+                            <a href="#" class="burger__suplink">Arasmus + program</a>
+                            <a href="#" class="burger__suplink">MEVLANA academic exchange program</a>
+                            <a href="#" class="burger__suplink">Intermational scholarchip program</a>
+                        </div>
+                    </div>
+                    <div class="burger__item dropdown">
+                        <div class="burger__link">
+                            International projects
+                            <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
+                        </div>
+                        <div class="burger__dropdown">
+                            <a href="#" class="burger__suplink">Establishing Master Programmes in HRM and Talent
+                                Development in Central Asia</a>
+                            <a href="#" class="burger__suplink">Erasmus+ project “Enhancing Green Economy in 3 countries
+                                of Asia</a>
+                        </div>
+                    </div>
+                    <div class="burger__item dropdown">
+                        <div class="burger__link">
+                            About
+                            <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
+                        </div>
+                        <div class="burger__dropdown">
+                            <a href="#" class="burger__suplink">Admission for Degree</a>
+                            <a href="#" class="burger__suplink">HEI Partners</a>
+                            <a href="#" class="burger__suplink">KEU leadership</a>
+                            <a href="#" class="burger__suplink">Research</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+        {% block content %}
+        {% endblock %}
+
+
+
+
+
+        <section class="subscribe">
+            <div class="subscribe__content">
+                <h2>
+                    Monthly newsletter from KEU
+                </h2>
+                <p>
+                    If you are not a university student, you can leave your details so that we can send you information
+                    about all events at the university immediately by mail.
+                </p>
+                <form>
+                    <label for="name">
+                        Name
+                        <input id="name" type="name">
+                    </label>
+                    <label for="surname">
+                        Surname
+                        <input id="surname" type="surname">
+                    </label>
+                    <label for="email">
+                        Email*
+                        <input required id="email" type="email">
+                    </label>
+                    <button>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.424539018041!2d74.62261471533786!3d42.82164527915863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb5d90cfa27ef%3A0xd949c1e4bc3e494a!2z0JrQrdCj!5e0!3m2!1sru!2skg!4v1679865606656!5m2!1sru!2skg"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__connect">
+            <div>
+                <h2>
+                    CONNECT WITH US
+                </h2>
+
+                <div class="footer__item">
+                    <h2>
+                        Address:
+                    </h2>
+                    <p>Кыргызская Республика</p>
+                    <p>Bishkek</p>
+                    <p>Шамсинская 2</p>
+                </div>
+                <div class="footer__item">
+                    <a href="mailto:info@keu.kg">Mail: info@keu.kg</a>
+                </div>
+                <div class="footer__item">
+                    <a href="tel:+996313860263">Tel.: +996 3138 60263</a>
+                </div>
+                <div class="footer__social">
+                    <a href="#">
+                        <img src="{% static './media/icons/inst.svg' %}" alt="social-icon">
+<!--                        <img src="./media/icons/inst.svg" alt="social-icon">-->
+                    </a>
+                    <a href="#">
+                        <img src="{% static './media/icons/facebook.svg' %}" alt="social-icon">
+<!--                        <img src="./media/icons/facebook.svg" alt="social-icon">-->
+                    </a>
+                    <a href="#">
+                        <img src="{% static './media/icons/youtube.svg' %}" alt="social-icon">
+<!--                        <img src="./media/icons/youtube.svg" alt="social-icon">-->
+                    </a>
+                    <a href="#">
+                        <img src="{% static './media/icons/tiktok.svg' %}" alt="social-icon">
+<!--                        <img src="./media/icons/tiktok.svg" alt="social-icon">-->
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__form">
+            <div>
+                <h2>
+                    YOU HAVE <br /> QUESTIONS?
+                </h2>
+
+                <form>
+                    <div>
+                        <label for="name">
+                            Name
+                            <input id="name" type="name">
+                        </label>
+                        <label for="surname">
+                            Surname
+                            <input id="surname" type="surname">
+                        </label>
+                        <label for="email">
+                            Email*
+                            <input required id="email" type="email">
+                        </label>
+                        <label for="tel">
+                            Tel number
+                            <input id="tel" type="tel">
+                        </label>
+                    </div>
+                    <label for="">
+                        Send us a message...
+                    </label>
+                    <textarea></textarea>
+                    <button>Send</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

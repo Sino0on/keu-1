@@ -1,0 +1,53 @@
+.features {
+    background: #3E5BAC;
+    padding-top: 88px;
+    padding-bottom: 54px;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .item {
+        width: 284px;
+        position: relative;
+
+        h2 {
+            @include font(14px, #FFFFFF, 700);
+            letter-spacing: 1.4px;
+            width: 165px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        &__top {
+            height: 211px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            @include flex(center, center);
+
+            img {
+                max-width: 100%;
+                position: absolute;
+                z-index: 0;
+            }
+        }
+
+        &__bottom {
+            background: #153695;
+            padding: 25px 45px;
+            text-align: center;
+
+            button {
+                border: 1px solid #FFFFFF;
+                background: transparent;
+                @include font(14px, #FFFFFF);
+                letter-spacing: 1.4px;
+                padding: 11px 50px;
+            }
+        }
+    }
+}

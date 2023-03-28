@@ -1,0 +1,98 @@
+.subscribe {
+    background: url(../assets/img/subscribe-bg.png) no-repeat;
+    background-size: cover;
+    padding: 56px 43px;
+
+    &__content {
+        background: #153695;
+        padding: 53px 62px;
+        max-width: 642px;
+        margin: 0 auto;
+
+        h2 {
+            @include font(30px, #fff, 700);
+            text-align: center;
+        }
+
+        p {
+            @include font(14px, #fff);
+            text-align: center;
+            line-height: 26px;
+            margin-top: 16px;
+        }
+
+        form {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 43px;
+            column-gap: 39px;
+
+            label {
+                @include font(11px, #fff);
+                display: flex;
+                flex-direction: column;
+            }
+
+            input {
+                background: transparent;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #ffffff;
+                @include font(11px, #fff);
+                height: 31px;
+                width: 100%;
+            }
+
+            button {
+                background: #ffffff;
+                border: 1px solid #5f7acb;
+                padding: 11px 79px;
+                @include font(11px, #153695, 700);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 589px) {
+    .subscribe {
+        h2 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 10px;
+            line-height: 26px;
+        }
+
+        &__content {
+            form {
+                grid-template-columns: repeat(1, 1fr);
+
+                label {
+                    width: 70%;
+                    margin: 0 auto;
+                }
+
+                button {
+                    width: 214px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .subscribe {
+        background: #3E5BAC;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .subscribe {
+        &__content {
+            padding: 40px 24px;
+        }
+    }
+}
