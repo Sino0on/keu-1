@@ -2,5 +2,14 @@
 {% block content %}
 {% for i in news %}
 
-{% end for %}
+<div class="card text-bg-dark">
+  <img src="{{ i.image.url }}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{ i.title }}</h5>
+    <p class="card-text">{{ i.description }}</p>
+    <a class="card-text"><small class="text-body-secondary">See more</small></a>
+  </div>
+</div>
+<br>
+{% endfor %}
 {% endblock  %}

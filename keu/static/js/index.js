@@ -17,18 +17,18 @@ burgerItem.forEach((item) => {
   });
 });
 
-const swiper = new Swiper(".swiper", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    841: {
-      slidesPerView: 3,
-      spaceBetween: 24,
-    },
-  },
-});
+//const swiper = new Swiper(".swiper", {
+//  pagination: {
+//    el: ".swiper-pagination",
+//    clickable: true,
+//  },
+//  breakpoints: {
+//    841: {
+//      slidesPerView: 3,
+//      spaceBetween: 24,
+//    },
+//  },
+//});
 
 const featuresContent = document.querySelector(".features__content");
 
@@ -81,25 +81,25 @@ const featuresItems = [
 //  `;
 //});
 
-const newsContent = document.querySelector(".swiper-wrapper");
-
-const newsItems = [
-  {
-    id: 1,
-    title: `Student scientific conference on "Problems of science: a student's view".`,
-    img: "./assets/img/news-img-1.png",
-  },
-  {
-    id: 2,
-    title: `Student scientific conference on "Problems of science: a student's view".`,
-    img: "./assets/img/news-img-2.png",
-  },
-  {
-    id: 3,
-    title: `Student scientific conference on "Problems of science: a student's view".`,
-    img: "./assets/img/news-img-3.png",
-  },
-];
+//const newsContent = document.querySelector(".swiper-wrapper");
+//
+//const newsItems = [
+//  {
+//    id: 1,
+//    title: `Student scientific conference on "Problems of science: a student's view".`,
+//    img: "./assets/img/news-img-1.png",
+//  },
+//  {
+//    id: 2,
+//    title: `Student scientific conference on "Problems of science: a student's view".`,
+//    img: "./assets/img/news-img-2.png",
+//  },
+//  {
+//    id: 3,
+//    title: `Student scientific conference on "Problems of science: a student's view".`,
+//    img: "./assets/img/news-img-3.png",
+//  },
+//];
 
 //newsItems.forEach((item) => {
 //  newsContent.innerHTML += `
