@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        International projects
+                    </h1>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="description">
+            <p>
+                NRU KEU is the provision of a multi-level education corresponding to international standards, quality
+                and
+                preparation highly qualified specialists of a new formation necessary to support innovation- oriented
+                strategies for economic growth, the formation of new knowledge, skills and professional competencies
+                capable of practical implementation in the production of entrepreneurial activity. AND
+            </p>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features__content">
+                    {% for i in projects %}
+                    <div class="features__item item">
+                        <div class="item__top">
+                            <img src="{{ i.image.url }}" alt="features-img">
+                            <h2 class="item__title">{{ i.title  }}</h2>
+                        </div>
+                        <div class="item__bottom">
+                            <a href="{% url 'project_detail' i.pk %}"><button>
+                                About
+                            </button></a>
+                        </div>
+                      </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
