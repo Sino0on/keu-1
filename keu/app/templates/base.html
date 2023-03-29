@@ -31,13 +31,13 @@
                     <span>RU</span>
                 </div>
                 <div class="header__item">
-                    <a class="header__link" href="#">Home</a>
+                    <a class="header__link" href="{% url 'home' %}">Home</a>
                 </div>
                 <div class="header__item dropdown">
                     <a class="header__link" href="#">About KEU</a>
                     <div class="dropdown__menu">
                         {% for i in aboutkeus %}
-                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
                         {% endfor%}
 <!--                        <a href="#" class="dropdown__link">Mission, Vision, Value</a>-->
 <!--                        <a href="#" class="dropdown__link">Awards & Achievement</a>-->
@@ -51,7 +51,7 @@
                     <a class="header__link" href="#">Academic Programs</a>
                     <div class="dropdown__menu">
                         {% for i in programs %}
-                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'program_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
                         {% endfor%}
 <!--                        <a href="#" class="dropdown__link">Arasmus + program</a>-->
 <!--                        <a href="#" class="dropdown__link">MEVLANA academic exchange program</a>-->
@@ -61,17 +61,16 @@
                 <div class="header__item dropdown">
                     <a class="header__link" href="#">International projects</a>
                     <div class="dropdown__menu">
-                        <a href="#" class="dropdown__link">Establishing Master Programmes in HRM and Talent Development
-                            in Central Asia</a>
-                        <a href="#" class="dropdown__link">Erasmus+ project “Enhancing Green Economy in 3 countries of
-                            Asia</a>
+                        {% for i in projects %}
+                            <a href="{% url 'project_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="header__item dropdown">
                     <a class="header__link" href="#">About</a>
                     <div class="dropdown__menu">
                         {% for i in abouts %}
-                            <a href="#" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'about_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
                         {% endfor%}
 <!--                        <a href="#" class="dropdown__link">Admission for Degree</a>-->
 <!--                        <a href="#" class="dropdown__link">HEI Partners</a>-->
@@ -276,7 +275,11 @@
             </div>
         </div>
     </footer>
-
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Send</button>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="{% static './js/index.js' %}"></script>
 

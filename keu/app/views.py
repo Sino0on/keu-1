@@ -18,8 +18,9 @@ class Home(ListView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
+        context['pages'] = BlankPage.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
-        print(context['news'])
+        context['abouts'] = About.objects.all()
         return context
 class NewsListView(ListView):
     model = News
@@ -48,3 +49,127 @@ class DetailNews(DetailView):
         context['aboutkeus'] = AboutKEU.objects.all()
         context['abouts'] = About.objects.all()
         return context
+
+
+class ProgramListView(ListView):
+    model = Program
+    queryset = Program.objects.all()
+    context_object_name = 'programs'
+    template_name = 'programs.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class ProgramDetailView(DetailView):
+    model = Program
+    queryset = Program.objects.all()
+    context_object_name = 'program'
+    template_name = 'program_detail.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class ProjectListView(ListView):
+    model = Project
+    queryset = Program.objects.all()
+    context_object_name = 'programs'
+    template_name = 'projects.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+    queryset = Project.objects.all()
+    context_object_name = 'project'
+    template_name = 'project_detail.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class AboutKeuDetailView(DetailView):
+    model = AboutKEU
+    queryset = AboutKEU.objects.all()
+    context_object_name = 'aboutpage'
+    template_name = 'aboutKEUS.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class AboutDetailView(DetailView):
+    model = About
+    queryset = About.objects.all()
+    context_object_name = 'aboutpage'
+    template_name = 'aboutKEUS.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+
+class PageDetailView(DetailView):
+    model = BlankPage
+    queryset = BlankPage.objects.all()
+    context_object_name = 'aboutpage'
+    template_name = 'aboutKEUS.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['programs'] = Program.objects.all()
+        context['aboutkeus'] = AboutKEU.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['abouts'] = About.objects.all()
+        return context
+
+class Question(CreateView):
+    model = Messages
+    template_name = 'base.html'
+    fields = '__all__'

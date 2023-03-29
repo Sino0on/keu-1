@@ -1,15 +1,49 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-{% for i in news %}
+<main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        International projects
+                    </h1>
 
-<div class="card text-bg-dark">
-  <img src="{{ i.image.url }}" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title">{{ i.title }}</h5>
-    <p class="card-text">{{ i.description }}</p>
-    <a class="card-text" href="{% url 'news/{{ i.pk }}'"><small class="text-body-secondary">See more</small></a>
-  </div>
-</div>
-<br>
-{% endfor %}
-{% endblock  %}
+
+                </div>
+            </div>
+        </section>
+
+        <section class="description">
+            <p>
+                NRU KEU is the provision of a multi-level education corresponding to international standards, quality
+                and
+                preparation highly qualified specialists of a new formation necessary to support innovation- oriented
+                strategies for economic growth, the formation of new knowledge, skills and professional competencies
+                capable of practical implementation in the production of entrepreneurial activity. AND
+            </p>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features__content">
+                    {% for i in news %}
+                    <div class="features__item item">
+                        <div class="item__top">
+                            <img src="{{ i.image.url }}" alt="features-img">
+                            <h2 class="item__title">{{ i.title  }}</h2>
+                        </div>
+                        <div class="item__bottom">
+                            <a href="{% url 'detail_news' i.pk %}"><button>
+                                About
+                            </button></a>
+                        </div>
+                      </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}

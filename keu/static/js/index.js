@@ -17,18 +17,18 @@ burgerItem.forEach((item) => {
   });
 });
 
-//const swiper = new Swiper(".swiper", {
-//  pagination: {
-//    el: ".swiper-pagination",
-//    clickable: true,
-//  },
-//  breakpoints: {
-//    841: {
-//      slidesPerView: 3,
-//      spaceBetween: 24,
-//    },
-//  },
-//});
+const swiper = new Swiper(".swiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    841: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+  },
+});
 
 const featuresContent = document.querySelector(".features__content");
 
@@ -81,60 +81,60 @@ const featuresItems = [
 //  `;
 //});
 
-//const newsContent = document.querySelector(".swiper-wrapper");
-//
-//const newsItems = [
-//  {
-//    id: 1,
-//    title: `Student scientific conference on "Problems of science: a student's view".`,
-//    img: "./assets/img/news-img-1.png",
-//  },
-//  {
-//    id: 2,
-//    title: `Student scientific conference on "Problems of science: a student's view".`,
-//    img: "./assets/img/news-img-2.png",
-//  },
-//  {
-//    id: 3,
-//    title: `Student scientific conference on "Problems of science: a student's view".`,
-//    img: "./assets/img/news-img-3.png",
-//  },
-//];
+const newsContent = document.querySelector(".swiper-wrapper");
 
-//newsItems.forEach((item) => {
-//  newsContent.innerHTML += `
-//    <div class="swiper-slide">
-//        <div class="news__item item">
-//            <div class="item__top">
-//                <img src="${item.img}" alt="news-img">
-//            </div>
-//            <div class="item__bottom">
-//                <p>
-//                ${item.title}
-//                </p>
-//                <i>
-//                    <a href="#">Read More</a>
-//                </i>
-//            </div>
-//        </div>
-//    </div>
-//  `;
-//});
+const newsItems = [
+  {
+    id: 1,
+    title: `Student scientific conference on "Problems of science: a student's view".`,
+    img: "./assets/img/news-img-1.png",
+  },
+  {
+    id: 2,
+    title: `Student scientific conference on "Problems of science: a student's view".`,
+    img: "./assets/img/news-img-2.png",
+  },
+  {
+    id: 3,
+    title: `Student scientific conference on "Problems of science: a student's view".`,
+    img: "./assets/img/news-img-3.png",
+  },
+];
 
-const partnersContent = document.querySelector(".partners__content");
+// newsItems.forEach((item) => {
+//   newsContent.innerHTML += `
+//     <div class="swiper-slide">
+//         <div class="news__item item">
+//             <div class="item__top">
+//                 <img src="${item.img}" alt="news-img">
+//             </div>
+//             <div class="item__bottom">
+//                 <p>
+//                 ${item.title}
+//                 </p>
+//                 <i>
+//                     <a href="#">Read More</a>
+//                 </i>
+//             </div>
+//         </div>
+//     </div>
+//   `;
+// });
 
-const partnersItems = [
-  "./assets/img/partners-img-1.png",
-  "./assets/img/partners-img-2.png",
-  "./assets/img/partners-img-3.png",
-  "./assets/img/partners-img-4.png",
-  "./assets/img/partners-img-5.png",
-]
+ const partnersContent = document.querySelector(".partners__content");
 
-//partnersItems.forEach((item) => {
-//  partnersContent.innerHTML += `
-//  <div class="partners__item">
-//    <img src="${item}" alt="">
-//  </div>
-//  `;
-//});
+ const partnersItems = [
+   "static/assets/img/partners-img-1.png",
+   "static/assets/img/partners-img-2.png",
+   "static/assets/img/partners-img-3.png",
+   "static/assets/img/partners-img-4.png",
+   "static/assets/img/partners-img-5.png",
+ ]
+
+ partnersItems.forEach((item) => {
+   partnersContent.innerHTML += `
+   <div class="partners__item">
+     <img src="${item}" alt="">
+   </div>
+   `;
+ });
