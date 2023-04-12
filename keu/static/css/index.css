@@ -64,7 +64,7 @@ button {
   color: #152040;
 }
 .header__lang span {
-  font-size: 12px;
+  font-size: 9px;
   color: #ffffff;
   font-weight: 400;
 }
@@ -234,9 +234,13 @@ button {
 .description {
   background: #153695;
   padding: 92px 62px 44px 62px;
-  height: 439px;
-  display: flex;
-  align-items: center;
+}
+.description h2 {
+  font-size: 44px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 86px;
 }
 .description p {
   font-size: 16px;
@@ -244,15 +248,8 @@ button {
   font-weight: 400;
   line-height: 22px;
   max-width: 877px;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
-}
-.description p::before {
-  content: "";
-  position: absolute;
-  border-top: 1px solid #bdbdbd;
-  width: 34%;
-  bottom: -40px;
 }
 
 .features {
