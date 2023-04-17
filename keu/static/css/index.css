@@ -169,6 +169,7 @@ button {
 .hero {
   background: url(../assets/img/hero-bg.png) no-repeat;
   background-size: cover;
+  background-position: center;
   box-shadow: 0px -450px 500px 0px rgba(0, 0, 0, 0.8) inset;
 }
 .hero__content {
