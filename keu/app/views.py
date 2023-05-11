@@ -21,6 +21,7 @@ class Home(ListView):
         context['pages'] = BlankPage.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
         context['abouts'] = About.objects.all()
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         return context
 class NewsListView(ListView):
     model = News
@@ -34,6 +35,7 @@ class NewsListView(ListView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 class DetailNews(DetailView):
@@ -47,6 +49,7 @@ class DetailNews(DetailView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -64,6 +67,7 @@ class ProgramListView(ListView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -81,6 +85,7 @@ class ProgramDetailView(DetailView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -97,6 +102,7 @@ class ProjectListView(ListView):
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['news'] = News.objects.order_by('-date')[:3]
         context['abouts'] = About.objects.all()
         return context
@@ -115,6 +121,7 @@ class ProjectDetailView(DetailView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -132,6 +139,7 @@ class AboutKeuDetailView(DetailView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -149,6 +157,7 @@ class AboutDetailView(DetailView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
@@ -166,6 +175,7 @@ class PageDetailView(DetailView):
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
