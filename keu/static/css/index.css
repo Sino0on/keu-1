@@ -234,6 +234,7 @@ button {
 }
 .description {
   background: #153695;
+
   padding: 92px 62px 44px 62px;
 }
 .description h2 {
@@ -249,7 +250,6 @@ button {
   font-weight: 400;
   line-height: 22px;
   max-width: 877px;
-  margin: 10px auto;
   position: relative;
 }
 
