@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView,CreateView
 # def home(request):
 #     return render(request,'index.html',{})
 
+
 class Home(ListView):
     model = About
     queryset = About.objects.all()
@@ -38,6 +39,8 @@ class NewsListView(ListView):
         context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
+
+
 class DetailNews(DetailView):
     model = News
     context_object_name = 'news'
