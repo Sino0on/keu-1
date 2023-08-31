@@ -96,7 +96,7 @@ a.section:link, a.section:visited {
 }
 
 a.section:focus, a.section:hover {
-    text-decoration: underline;
+
 }
 
 /* GLOBAL DEFAULTS */
@@ -634,7 +634,7 @@ ul.errorlist li:first-child {
 
 ul.errorlist li a {
     color: inherit;
-    text-decoration: underline;
+
 }
 
 td ul.errorlist {
@@ -883,7 +883,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 #header a:focus , #header a:hover {
-    text-decoration: underline;
+
 }
 
 #branding {
