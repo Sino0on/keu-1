@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="header__item dropdown">
-                    <a class="header__link" href="#">International projects</a>
+                    <a class="header__link" href="{% url 'projects' %}">International projects</a>
                     <div class="dropdown__menu">
                         {% for i in projects %}
                             <a href="{% url 'project_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
@@ -99,61 +99,68 @@
 
                 <div class="burger__menu">
                     <div class="burger__item">
-                        <a href="" class="burger__link">Home</a>
+                        <a href="{% url 'home' %}" class="burger__link">Home</a>
                     </div>
                     <div class="burger__item dropdown">
                         <div class="burger__link">
                             About KEU
+                            {% if aboutkeus %}
                             <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+                            {% endif %}
 <!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
                         </div>
 
                         <div class="burger__dropdown">
-                            <a href="#" class="burger__suplink">KEU-brief history</a>
-                            <a href="#" class="burger__suplink">Mission, Vision, Value</a>
-                            <a href="#" class="burger__suplink">Awards & Achievement</a>
-                            <a href="#" class="burger__suplink">Alumni Success stories</a>
+                            {% for i in aboutkeus %}
+                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="burger__suplink">KEU-brief history</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="burger__item">
-                        <a href="#" class="burger__link">News</a>
+                        <a href="{% url 'news' %}" class="burger__link">News</a>
                     </div>
                     <div class="burger__item dropdown">
                         <div class="burger__link">
-                            Academic Programs
+                            <a href="{% url 'programs' %}" class="burger__link">Academic Programs</a>
+
+                            {% if programs %}
                             <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+                            {% endif %}
 <!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
                         </div>
                         <div class="burger__dropdown">
-                            <a href="#" class="burger__suplink">Arasmus + program</a>
-                            <a href="#" class="burger__suplink">MEVLANA academic exchange program</a>
-                            <a href="#" class="burger__suplink">Intermational scholarchip program</a>
+                            {% for i in programs %}
+                                <a href="{% url 'program_detail' i.pk %}" class="burger__suplink">Arasmus + program</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="burger__item dropdown">
                         <div class="burger__link">
-                            International projects
+                            <a href="{% url 'projects' %}" class="burger__link">International projects</a>
+                            {% if projects %}
                             <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+                            {% endif %}
 <!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
                         </div>
                         <div class="burger__dropdown">
+                            {% for i in projects %}
                             <a href="#" class="burger__suplink">Establishing Master Programmes in HRM and Talent
                                 Development in Central Asia</a>
-                            <a href="#" class="burger__suplink">Erasmus+ project “Enhancing Green Economy in 3 countries
-                                of Asia</a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="burger__item dropdown">
                         <div class="burger__link">
                             About
+                            {% if abouts %}
                             <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
+                            {% endif %}
 <!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
                         </div>
                         <div class="burger__dropdown">
+                            {% for i in abouts %}
                             <a href="#" class="burger__suplink">Admission for Degree</a>
-                            <a href="#" class="burger__suplink">HEI Partners</a>
-                            <a href="#" class="burger__suplink">KEU leadership</a>
-                            <a href="#" class="burger__suplink">Research</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
