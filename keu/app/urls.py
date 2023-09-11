@@ -15,6 +15,7 @@ urlpatterns = [
     path('about/<int:pk>', AboutDetailView.as_view(), name='about_detail'),
     path('page/<int:pk>', PageDetailView.as_view(), name='page_detail'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('send_question', Question.as_view(), name='question')
+    path('send_question', Question.as_view(), name='question'),
+    path('forum', forum, name='forum')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
