@@ -38,15 +38,8 @@
                     <a class="header__link" href="{% url 'home' %}">Home</a>
                 </div>
                 <div class="header__item dropdown">
-                    <a class="header__link" href="{% url 'aboutkeu_detail' aboutkeu.pk %}">About KEU</a>
-                    <div class="dropdown__menu">
-                        {% for i in aboutkeus %}
-                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
-                        {% endfor%}
-<!--                        <a href="#" class="dropdown__link">Mission, Vision, Value</a>-->
-<!--                        <a href="#" class="dropdown__link">Awards & Achievement</a>-->
-<!--                        <a href="#" class="dropdown__link">Alumni Success stories</a>-->
-                    </div>
+                    <a class="header__link" href="">About KEU</a>
+
                 </div>
                 <div class="header__item">
                     <a class="header__link" href="{% url 'news' %}">News</a>
