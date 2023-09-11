@@ -189,4 +189,10 @@ class Question(CreateView):
 
 
 def forum(request):
-    return render(request, 'forum.html')
+    documents = Documents.objects.all()
+    return render(request, 'forum.html', {'documents': documents})
+
+
+def document_detail(request, pk):
+    document = Documents.objects.get(id=pk)
+    return render(request, 'document_detail.html', {'document': document})
