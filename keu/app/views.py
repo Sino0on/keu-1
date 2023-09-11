@@ -186,3 +186,7 @@ class Question(CreateView):
     model = Messages
     template_name = 'base.html'
     fields = '__all__'
+
+
+def forum(request):
+    return render(request, 'forum.html')
