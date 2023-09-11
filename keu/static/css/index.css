@@ -83,7 +83,7 @@ button {
 }
 
 .header__link:hover {
-  background: #a5bbfa;
+  background: #ffffff;
   color: #152040;
 }
 
@@ -125,8 +125,9 @@ button {
 }
 
 .dropdown__menu a {
+  padding: 6px;
   font-size: 12px;
-  color: #A5BBFA;
+  color: #ffffff;
   font-weight: 400;
   line-height: 10px;
 }
