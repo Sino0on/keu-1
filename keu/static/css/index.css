@@ -151,6 +151,7 @@ button {
 
 .burger__open.active {
   display: none;
+  z-Index:999;
 }
 
 .burger__open.active ~ .burger__close {

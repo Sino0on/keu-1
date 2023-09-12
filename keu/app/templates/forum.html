@@ -25,7 +25,23 @@
             <a href="{% url 'home' %}" class="header__logo">
                 <img src="{% static './media/icons/logo.svg' %}" alt="logo" style="width: 85px">
 <!--                <img src="./media/icons/logo.svg" alt="logo">-->
-                <h2 style="font-size: 20px; width: 250px;">"Муса Рыскулбеков атындагы КЭУ" </h2>
+                <style>
+                .header__logo h2 {
+                font-size: 20px;
+                width: 342px;
+                }
+                @media screen and (max-width: 768px) {
+                  .header__logo h2 {
+                    width: 200px; /* Заполнить всю доступную ширину */
+                    font-size: 10px; /* Уменьшенный размер шрифта для маленьких экранов */
+                  }
+                }
+
+                </style>
+                <h2>Научно – исследовательский
+университет
+“КЫРГЫЗСКИЙ ЭКОНОМИЧЕСКИЙ УНИВЕРСИТЕТ
+имени М. Рыскулбекова” </h2>
             </a>
 
             <nav class="header__nav">
@@ -55,42 +71,15 @@
                 </svg>
 
                 <div class="burger__menu">
+                    {% for i in documents %}
                     <div class="burger__item">
-                        <a href="{% url 'home' %}" class="burger__link">Home</a>
+                        {% if i.url %}
+                        <a href="{{ i.url }}" class="burger__link">{{ i.title }}</a>
+                        {% else %}
+                        <a href="{{ i.file.url }}" class="burger__link">{{ i.title }}</a>
+                        {% endif %}
                     </div>
-                    <div class="burger__item dropdown">
-                        <div class="burger__link">
-                            About KEU
-
-<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
-                        </div>
-
-
-                    </div>
-                    <div class="burger__item">
-                        <a href="#" class="burger__link">News</a>
-                    </div>
-                    <div class="burger__item dropdown">
-                        <div class="burger__link">
-                            <a href="#" class="burger__link">Academic Programs</a>
-
-
-<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
-                        </div>
-
-                    </div>
-                    <div class="burger__item dropdown">
-                        <div class="burger__link">
-                            <a href="#" class="burger__link">International projects</a>
-<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
-                        </div>
-
-                    </div>
-                    <div class="burger__item dropdown">
-                        <div class="burger__link">
-                            About
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -98,10 +87,23 @@
 
 
 <main>
+                    <style>
+                        .hero h1 {
+                            width: 100%; /* Заполнить всю доступную ширину */
+                            font-size: 33px; /* Уменьшенный размер шрифта для маленьких экранов */
+                          }
+                        @media screen and (max-width: 768px) {
+                          .hero h1 {
+                            width: 100%; /* Заполнить всю доступную ширину */
+                            font-size: 23px; /* Уменьшенный размер шрифта для маленьких экранов */
+                          }
+                        }
+                    </style>
         <section class="hero" >
             <div class="container">
                 <div class="hero__content" style="    padding-top: 108px;">
-                    <h1 class="hero__title" style="font-size: 33px;">
+
+                    <h1 class="hero__title">
                         <span>"Экономикалык реалдуулуктун жаны чакырыктары"</span><br />Эл аралык илимий-практикалык конференциясына
                     </h1>
                     <style>
@@ -126,16 +128,32 @@
   transform: translateX(-50%);
   font-size: 14px;
 }
-.timer__item:not(:last-child)::after {
-  content: ':';
-  position: absolute;
-  right: -15px;
+@media screen and (max-width: 768px) {
+  .timer__items {
+    width: 100%; /* Заполнить всю доступную ширину */
+    font-size: 40px; /* Уменьшенный размер шрифта для маленьких экранов */
+  }
 }
+.timer__days {
+    width: 100%; /* Заполнить всю доступную ширину */
+    font-size: 75px; /* Уменьшенный размер шрифта для маленьких экранов */
+  }
+@media screen and (max-width: 768px) {
+  .timer__days {
+    width: 100%; /* Заполнить всю доступную ширину */
+    font-size: 40px; /* Уменьшенный размер шрифта для маленьких экранов */
+  }
+}
+
                     </style>
-                    <div class="timer" style="color: white;">
+
+                    <div class="timer" style="color: white; padding-top: 27px;">
+
+                        <div class="timer__item timer__days" style="color: #ffaa00;">00</div>
+                          <br>
                       <div class="timer__items" style="justify-content: center;
-    padding-top: 107px;">
-                        <div class="timer__item timer__days">00</div>
+    ">
+
                         <div class="timer__item timer__hours">00</div>
                         <div class="timer__item timer__minutes">00</div>
                         <div class="timer__item timer__seconds">00</div>
