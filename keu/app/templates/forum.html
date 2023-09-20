@@ -128,6 +128,11 @@
   transform: translateX(-50%);
   font-size: 14px;
 }
+.timer__item:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  right: -15px;
+}
 @media screen and (max-width: 768px) {
   .timer__items {
     width: 100%; /* Заполнить всю доступную ширину */
