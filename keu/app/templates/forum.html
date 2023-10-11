@@ -44,16 +44,24 @@
             </a>
 
             <nav class="header__nav">
-
                 {% for i in documents %}
-                <div class="header__item">
-                    {% if i.file %}
-                    <a class="header__link" href="{{ i.file.url }}">{{ i.title }}</a>
-                    {% else %}
-                    <a class="header__link" href="{{ i.url }}">{{ i.title }}</a>
-                    {% endif %}
+                <div class="header__item dropdown">
+                    <a class="header__link" href="{% url 'programs' %}">{{ i }}</a>
+                    <div class="dropdown__menu">
+                        {% for j in i.docs.all %}
+                            {% if j.file %}
+                            <a href="{{ i.file.url }}" class="dropdown__link">{{ j.title }}</a>
+                            {% else %}
+                            <a href="{{ i.url }}" class="dropdown__link">{{ j.title }}</a>
+                            {% endif %}
+                        {% endfor%}
+<!--                        <a href="#" class="dropdown__link">Arasmus + program</a>-->
+<!--                        <a href="#" class="dropdown__link">MEVLANA academic exchange program</a>-->
+<!--                            <a href="#" class="dropdown__link">Intermational scholarchip program</a>-->
+                    </div>
                 </div>
                 {% endfor %}
+
             </nav>
 
             <div class="header__burger burger">

@@ -58,11 +58,24 @@ class Messages(models.Model):
         return reverse('home')
 
 
+class DocsForum(models.Model):
+    title = models.CharField(max_length=123, verbose_name='Название')
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'Форум категория'
+        verbose_name_pllural = 'Форум категории'
+
+
 class Documents(models.Model):
     title = models.CharField(max_length=123, verbose_name='Название')
     url = models.URLField(verbose_name='Ссылка', blank=True, null=True)
     file = models.FileField(upload_to='files/', verbose_name='Файл', blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(DocsForum, on_delete=models.CASCADE, related_name='docs')
 
     def __str__(self):
         return f'{self.title}'
@@ -70,5 +83,3 @@ class Documents(models.Model):
     class Meta:
         verbose_name = 'Документ'
         verbose_name_plural = 'Документы'
-
-

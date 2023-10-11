@@ -189,7 +189,7 @@ class Question(CreateView):
 
 
 def forum(request):
-    documents = Documents.objects.all()
+    documents = DocsForum.objects.all()
     return render(request, 'forum.html', {'documents': documents})
 
 
