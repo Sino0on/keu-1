@@ -82,9 +82,10 @@
                 </svg>
 
                 <div class="burger__menu">
+                    <div class="burger__item dropdown">
                     {% for docs in documents %}
                     <div class="burger__link">
-                        <a href="{{ docs.url }}" class="burger__link">docs</a>
+                        <a href="{{ docs.url }}" class="burger__link">{{ docs }}</a>
 
                         {% if docs.url %}
                         <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
@@ -101,6 +102,7 @@
                         {% endfor %}
                     </div>
                     {% endfor %}
+                    </div>
                 </div>
                 </div>
             </div>
