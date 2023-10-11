@@ -75,7 +75,7 @@ class Documents(models.Model):
     url = models.URLField(verbose_name='Ссылка', blank=True, null=True)
     file = models.FileField(upload_to='files/', verbose_name='Файл', blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(DocsForum, on_delete=models.CASCADE, related_name='docs')
+    category = models.ForeignKey(DocsForum, on_delete=models.CASCADE, related_name='docs', blank=True, null=True)
 
     def __str__(self):
         return f'{self.title}'
