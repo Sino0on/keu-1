@@ -87,7 +87,7 @@
                     <div class="burger__link">
                         <a href="{{ doc.url }}" class="burger__link">{{ doc }}</a>
 
-                        {% if doc.url %}
+                        {% if doc.docs.all %}
                         <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
                         {% endif %}
 <!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
