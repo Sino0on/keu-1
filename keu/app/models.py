@@ -67,7 +67,7 @@ class DocsForum(models.Model):
 
     class Meta:
         verbose_name = 'Форум категория'
-        verbose_name_pllural = 'Форум категории'
+        verbose_name_plural = 'Форум категории'
 
 
 class Documents(models.Model):
