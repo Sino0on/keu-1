@@ -60,6 +60,7 @@ class Messages(models.Model):
 
 class DocsForum(models.Model):
     title = models.CharField(max_length=123, verbose_name='Название')
+    url = models.URLField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

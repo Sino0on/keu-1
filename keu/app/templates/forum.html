@@ -46,7 +46,11 @@
             <nav class="header__nav">
                 {% for i in documents %}
                 <div class="header__item dropdown">
-                    <a class="header__link" href="{% url 'programs' %}">{{ i }}</a>
+                    {% if i.url %}
+                    <a class="header__link" href="{{ i.url }}">{{ i }}</a>
+                    {% else %}
+                    <a class="header__link" href="#">{{ i }}</a>
+                    {% endif %}
                     <div class="dropdown__menu">
                         {% for j in i.docs.all %}
                             {% if j.file %}
