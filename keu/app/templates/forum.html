@@ -82,15 +82,26 @@
                 </svg>
 
                 <div class="burger__menu">
-                    {% for i in documents %}
-                    <div class="burger__item">
-                        {% if i.url %}
-                        <a href="{{ i.url }}" class="burger__link">{{ i.title }}</a>
-                        {% else %}
-                        <a href="{{ i.file.url }}" class="burger__link">{{ i.title }}</a>
+                    {% for docs in documents %}
+                    <div class="burger__link">
+                        <a href="{{ docs.url }}" class="burger__link">docs</a>
+
+                        {% if docs.url %}
+                        <img src="{% static './media/icons/arrow.svg' %}" alt="arrow">
                         {% endif %}
+<!--                            <img src="./media/icons/arrow.svg" alt="arrow">-->
+                    </div>
+                    <div class="burger__dropdown">
+                        {% for i in docs.docs.all %}
+                            {% if i.file %}
+                            <a href="{{ i.file.url }}" class="burger__suplink">{{ i.title }}</a>
+                            {% else %}
+                            <a href="{{ i.url }}" class="burger__suplink">{{ i.title }}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     {% endfor %}
+                </div>
                 </div>
             </div>
         </div>
