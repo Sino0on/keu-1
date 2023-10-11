@@ -82,8 +82,9 @@
                 </svg>
 
                 <div class="burger__menu">
-                    <div class="burger__item dropdown">
                     {% for doc in documents %}
+                    <div class="burger__item dropdown">
+
                     <div class="burger__link">
                         <a href="{{ doc.url }}" class="burger__link">{{ doc }}</a>
 
@@ -101,8 +102,9 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    {% endfor %}
+
                     </div>
+                    {% endfor %}
                 </div>
                 </div>
             </div>
