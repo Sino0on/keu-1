@@ -23,7 +23,7 @@
     <header class="header">
         <div class="header__content">
             <a href="{% url 'home' %}" class="header__logo">
-                <img src="{% static './assets/icons/forum-logo.jpeg' %}" alt="logo" style="width: 85px">
+                <img src="{% static './assets/icons/forum-logo.png' %}" alt="logo" style="width: 85px">
 <!--                <img src="./media/icons/logo.svg" alt="logo">-->
                 <style>
                 .header__logo h2 {
@@ -130,9 +130,10 @@
                 <div class="hero__content" style="    padding-top: 108px;">
 
                     <h1 class="hero__title" style="color: blue">
-                        XVII МУСАКОЖОЕВДИК ОКУУЛАР КАРА-КЫРГЫЗ АВТОНОМИЯЛУУ ОБЛУСУНУН ТҮЗҮЛГӨНДҮГҮНҮ 100 ЖЫЛДЫГЫНА КАРАТА ЖАНА ЭКОНОМИКА ИЛИМДЕРИНИН ДОКТОРУ, ПРОФЕССОР К. КААМЧЫБЕКОВДУН 75 ЖЫЛДЫК МААРАКЕСИНЕ АРНАЛГАН
-<br />«ЭКОНОМИКАЛЫК ОЙДУН ӨНҮГҮҮСҮ:
-<br /><span>ИЗИЛДӨӨЛӨР ЖАНА ЧЕЧҮҮ ЖОЛДОРУ» АТТУУ ЭЛ АРАЛЫК ИЛИМИЙ-ПРАКТИКАЛЫК КОНФЕРЕНЦИЯСЫ</span>
+                        Кара-Кыргыз автономиялуу облусунун түзүлгөндүгүнүн 100 жылдыгына карата жана
+
+<br />экономика илимдеринин доктору, профессор Т.К. Камчыбековдун 75 жылдык мааракесине арналган
+<br /><span>ЭКОНОМИКАЛЫК ФОРУМ</span>
 <br />
                     </h1>
                     <style>
@@ -238,10 +239,10 @@
     $hours.textContent = hours < 10 ? '0' + hours : hours;
     $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
     $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-    $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-    $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-    $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-    $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+    $days.dataset.title = declensionNum(days, ['кун', 'кун', 'кун']);
+    $hours.dataset.title = declensionNum(hours, ['саат', 'саат', 'саат']);
+    $minutes.dataset.title = declensionNum(minutes, ['минот', 'минот', 'минот']);
+    $seconds.dataset.title = declensionNum(seconds, ['секунд', 'секунд', 'секунд']);
   }
   // получаем элементы, содержащие компоненты даты
   const $days = document.querySelector('.timer__days');
