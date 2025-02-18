@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://keu.sino0on.ru', 'https://www.keu.sino0on.ru']
+CSRF_TRUSTED_ORIGINS = ['https://keu.edu.kg', 'https://www.keu.edu.kg']
 
 # Application definition
 
