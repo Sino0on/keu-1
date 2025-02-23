@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <main>
-        <section class="hero">
+        <section class="hero" style="background: url({% static 'logos/dastan.jpg' %}) no-repeat center; background-size: cover">
             <div class="container">
                 <div class="hero__content">
                     <h1 class="hero__title">
@@ -29,9 +29,10 @@
                     <div class="features__item item">
                         <div class="item__top">
                             <img src="{{ i.image.url }}" alt="features-img">
-                            <h2 class="item__title">{{ i.title  }}</h2>
+
                         </div>
                         <div class="item__bottom">
+                            <h2 class="item__title">{{ i.title  }}</h2>
                             <a href="{% url 'project_detail' i.pk %}"><button>
                                 About
                             </button></a>

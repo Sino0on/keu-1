@@ -25,7 +25,7 @@
             <a href="{% url 'home' %}" class="header__logo">
                 <img src="{% static './media/icons/logo.png' %}" alt="logo" style="width: 100px;">
 <!--                <img src="./media/icons/logo.svg" alt="logo">-->
-<!--                <h2>Scientific research university "KYRGYZ ECONOMIC UNIVERSITY named after M.Ryskulbekova"</h2>-->
+                <h2>SRU KYRGYZ ECONOMIC UNIVERSITY NAMED AFTER M.Ryskulbekova</h2>
             </a>
 
             <nav class="header__nav">
@@ -36,7 +36,7 @@
                     <a class="header__link" href="{% url 'aboutkeu_detail' aboutkeu.pk %}">About KEU</a>
                     <div class="dropdown__menu">
                         {% for i in aboutkeus %}
-                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link"  style="line-height: 16px; font-size: 16px;">{{i.title}}</a>
                         {% endfor%}
 <!--                        <a href="#" class="dropdown__link">Mission, Vision, Value</a>-->
 <!--                        <a href="#" class="dropdown__link">Awards & Achievement</a>-->
@@ -50,7 +50,7 @@
                     <a class="header__link" href="{% url 'programs' %}">Academic Programs</a>
                     <div class="dropdown__menu">
                         {% for i in programs %}
-                            <a href="{% url 'program_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'program_detail' i.pk %}" class="dropdown__link" style="line-height: 16px; font-size: 16px;">{{i.title}}</a>
                         {% endfor%}
 <!--                        <a href="#" class="dropdown__link">Arasmus + program</a>-->
 <!--                        <a href="#" class="dropdown__link">MEVLANA academic exchange program</a>-->
@@ -61,7 +61,7 @@
                     <a class="header__link" href="{% url 'projects' %}">International projects</a>
                     <div class="dropdown__menu">
                         {% for i in projects %}
-                            <a href="{% url 'project_detail' i.pk %}" class="dropdown__link">{{i.title}}</a>
+                            <a href="{% url 'project_detail' i.pk %}" class="dropdown__link"  style="line-height: 16px; font-size: 16px;">{{i.title}}</a>
                         {% endfor %}
                     </div>
                 </div>
@@ -218,18 +218,20 @@
                     <h2>
                         Address:
                     </h2>
-                    <p>Kyrgyz Republic</p>
+                    <p>720033</p>
+                    <p>Kyrgyzstan</p>
                     <p>Bishkek</p>
-                    <p>Togolok Moldo 58</p>
+                    <p>58 Togolok Moldo str.</p>
                 </div>
                 <div class="footer__item">
-                    <a href="mailto:info@keu.kg">Mail: keu.mobility2020@gmail.com / idep.keu@gmail.com</a>
+                    <a href="mailto:idep.keu@gmail.com">Mail: idep.keu@gmail.com</a>
                 </div>
                 <div class="footer__item">
-                    <a href="tel:+996313860263">Tel.: +996 551 290 984</a>
+                    <a href="tel:+996312325123">Tel.: +312 32 51 23</a>
+                    <a href="tel:+996507403442">Tel.: +996 507 40 34 42</a>
                 </div>
                 <div class="footer__item">
-                    <a href="tel:+996313860263">Room: 308</a>
+                    <a href="tel:+996507403442">Room: 308</a>
                 </div>
                 <div class="footer__social">
                     <a href="https://www.instagram.com/keu.kg/">

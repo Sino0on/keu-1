@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <main>
-        <section class="hero" >
+        <section class="hero" style="background: url({% static 'logos/dastan.jpg' %}) no-repeat center; background-size: cover">
             <div class="container">
                 <div class="hero__content">
                     <h1 class="hero__title">
@@ -42,6 +42,8 @@
                             <h2 class="item__title">International projects</h2>
                         </div>
                         <div class="item__bottom">
+
+
                             <a href="{% url 'projects' %}"><button>
                                 About
                             </button></a>
@@ -98,17 +100,52 @@
                 <a href = "{% url 'news' %}"><button>All news</button></a>
             </div>
         </section>
-         <section class="partners">
-            <h2 class="partners__title">Our partners</h2>
+         <section class="partners" style="    background: #ffffff;">
+            <h2 class="partners__title" style="    color: #000000;">Our partners</h2>
             <div class="container">
                 <div class="partners__content">
 
                     <div class="partners__item">
-                     <img src="https://hr.kimep.kz/Images/logo2b.png" alt="">
+                     <img src="{% static 'logos/Рисунок2.jpg' %}" alt="">
                    </div>
                     <div class="partners__item">
-                     <img src="https://www.auth.gr/wp-content/uploads/banner-horizontal-black-en.png" alt="">
+                     <img src="{% static 'logos/Рисунок3.png' %}" alt="">
                    </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок4.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок5.png' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок6.png' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок7.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок8.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок9.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок10.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок11.jpg' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок12.png' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок13.png' %}" alt="">
+                   </div>
+                    <div class="partners__item">
+                     <img src="{% static 'logos/Рисунок14.jpg' %}" alt="">
+                   </div>
+
+
                 </div>
             </div>
         </section>

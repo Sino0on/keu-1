@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 <main>
-        <section class="hero">
+        <section class="hero" style="background: url({% static 'logos/dastan.jpg' %}) no-repeat center; background-size: cover">
             <div class="container">
                 <div class="hero__content">
                     <h1 class="hero__title">
-                        Akademic Programs
+                        Academic Programs
                     </h1>
 
                     <div class="hero__bottom">
@@ -19,7 +19,8 @@
 
         <section class="description">
             <p>
-                NRU KEU aims to provide a multi-level education in line with international standards, emphasizing the quality and preparation of highly qualified specialists required to support innovation-oriented strategies for economic growth. Our goal is to cultivate new knowledge, skills, and professional competencies that can be effectively applied in entrepreneurial activities and production.
+                SRU KEU aims to provide a multi-level education in line with international standards, emphasizing the quality and preparation of highly qualified specialists required to support innovation-oriented strategies for economic growth.
+                Our goal is to cultivate new knowledge, skills, and professional competencies that can be effectively applied in entrepreneurial activities and production.
             </p>
         </section>
 
@@ -30,9 +31,10 @@
                     <div class="features__item item">
                         <div class="item__top">
                             <img src="{{ i.image.url }}" alt="features-img">
-                            <h2 class="item__title">{{ i.title  }}</h2>
+
                         </div>
                         <div class="item__bottom">
+                            <h2 class="item__title">{{ i.title  }}</h2>
                             <a href="{% url 'program_detail' i.pk %}"><button>
                                 About
                             </button></a>
