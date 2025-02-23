@@ -2,3 +2,4 @@ venv
 .idea
 keu/media
 .idea
+keu/db.sqlite3
