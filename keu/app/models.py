@@ -14,6 +14,10 @@ class Page(models.Model):
         return f'{self.title} | {self.date}'
 
 
+class ProgramCategory(models.Model):
+    title = models.CharField(max_length=123)
+
+
 class AboutKEU(Page):
     class Meta:
         pass
