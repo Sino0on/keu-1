@@ -118,9 +118,41 @@ button {
   position: absolute;
   display: none;
   background: rgba(21, 32, 64, 0.8);
-  padding: 10px 5px;
+  padding: 15px 0px;
   width: 91%;
   top: 32px;
+  text-align: center;
+}
+
+.dropdown__submenu {
+  position: absolute;
+  display: none;
+  background: rgba(21, 32, 64, 0.8);
+  padding: 15px 0px;
+  width: 91%;
+  top: 32px;
+  text-align: center;
+
+}
+
+
+
+.dropdown__link {
+  position: relative;
+}
+
+.dropdown__link:hover .dropdown__submenu {
+
+  display: block !important;
+  display: flex;
+  z-index: 100;
+  right: 160px;
+  top: 0;
+  position: absolute;
+  background: rgba(21, 32, 64, 0.8);
+  padding: 10px 5px;
+
+
   text-align: center;
 }
 

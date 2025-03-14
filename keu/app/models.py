@@ -23,7 +23,16 @@ class AboutKEU(Page):
         pass
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=123)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 class Program(Page):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='programs', blank=True, null=True)
+
     class Meta:
         pass
 

@@ -48,14 +48,24 @@
                 </div>
                 <div class="header__item dropdown">
                     <a class="header__link" href="{% url 'programs' %}">Academic Programs</a>
-                    <div class="dropdown__menu">
-                        {% for i in programs %}
-                            <a href="{% url 'program_detail' i.pk %}" class="dropdown__link" style="line-height: 16px; font-size: 16px;">{{i.title}}</a>
-                        {% endfor%}
-<!--                        <a href="#" class="dropdown__link">Arasmus + program</a>-->
-<!--                        <a href="#" class="dropdown__link">MEVLANA academic exchange program</a>-->
-<!--                            <a href="#" class="dropdown__link">Intermational scholarchip program</a>-->
-                    </div>
+<!--                    <div class="dropdown">-->
+
+                        <div class="dropdown__menu">
+                            {% for category in categories %}
+                            <div class="dropdown__link">
+                                <a href="#" class="dropdown__l">{{ category.name }}</a>
+                                <div class="dropdown__submenu">
+                                    {% for i in category.programs.all %}
+                                    <div class="dropdown__link">
+                                        <a href="{% url 'program_detail' i.pk %}" class="dropdown__link">{{ i.title }}</a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+<!--                    </div>-->
                 </div>
                 <div class="header__item dropdown">
                     <a class="header__link" href="{% url 'projects' %}">International projects</a>
