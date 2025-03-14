@@ -23,8 +23,17 @@ class AboutKEU(Page):
         pass
 
 
+class HeadCategory(models.Model):
+    name = models.CharField(max_length=123)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 class Category(models.Model):
     name = models.CharField(max_length=123)
+    head_category = models.ForeignKey(HeadCategory, on_delete=models.CASCADE, related_name='categories', blank=True,
+                                      null=True)
 
     def __str__(self):
         return f'{self.name}'

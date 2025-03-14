@@ -43,6 +43,29 @@
 <!--                        <a href="#" class="dropdown__link">Alumni Success stories</a>-->
                     </div>
                 </div>
+                {% for i in head_categories %}
+                <div class="header__item dropdown">
+                    <a class="header__link" href="{% url 'programs' %}">{{ i.name }}</a>
+<!--                    <div class="dropdown">-->
+
+                        <div class="dropdown__menu">
+                            {% for category in i.categories.all %}
+                            <div class="dropdown__link">
+                                <a href="#" class="dropdown__l">{{ category.name }}</a>
+                                <div class="dropdown__submenu">
+                                    {% for i in category.programs.all %}
+                                    <div class="dropdown__link">
+                                        <a href="{% url 'program_detail' i.pk %}" class="dropdown__link">{{ i.title }}</a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+<!--                    </div>-->
+                </div>
+                {% endfor %}
                 <div class="header__item">
                     <a class="header__link" href="{% url 'news' %}">News</a>
                 </div>

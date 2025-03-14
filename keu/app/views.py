@@ -17,7 +17,8 @@ class Home(ListView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['pages'] = BlankPage.objects.all()
@@ -35,7 +36,8 @@ class NewsListView(ListView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['aboutkeu'] = AboutKEU.objects.all()[0]
@@ -52,7 +54,8 @@ class DetailNews(DetailView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['aboutkeu'] = AboutKEU.objects.all()[0]
@@ -70,7 +73,8 @@ class ProgramListView(ListView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
@@ -89,7 +93,8 @@ class ProgramDetailView(DetailView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
@@ -108,7 +113,8 @@ class ProjectListView(ListView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['aboutkeu'] = AboutKEU.objects.all()[0]
@@ -128,7 +134,8 @@ class ProjectDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
         context['aboutkeu'] = AboutKEU.objects.all()[0]
@@ -146,7 +153,8 @@ class AboutKeuDetailView(DetailView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
@@ -165,7 +173,8 @@ class AboutDetailView(DetailView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['programs'] = Program.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
@@ -185,7 +194,8 @@ class PageDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
         context['programs'] = Program.objects.all()
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(head_category__isnull=True)
+        context['head_categories'] = HeadCategory.objects.all()
         context['aboutkeus'] = AboutKEU.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
         context['aboutkeu'] = AboutKEU.objects.all()[0]
