@@ -930,13 +930,3 @@ button {
   gap: 7px;
 }
 
-/*@media screen and (max-width: 767px) {
-  .footer {
-    -ms-flex-wrap: wrap-reverse;
-        flex-wrap: wrap-reverse;
-  }
-  .footer__connect, .footer__form {
-    width: 100%;
-  }
-}*/
-/*# sourceMappingURL=index.css.map */
