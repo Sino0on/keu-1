@@ -35,9 +35,18 @@
                 <div class="header__item dropdown">
                     <a class="header__link" href="{% url 'aboutkeu_detail' aboutkeu.pk %}">About KEU</a>
                     <div class="dropdown__menu">
-                        {% for i in aboutkeus %}
-                            <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link"  style="line-height: 16px; font-size: 16px;">{{i.title}}</a>
-                        {% endfor%}
+                        {% for category in aboutkeus %}
+                            <div class="dropdown__link">
+                                <a href="#" class="dropdown__l">{{ category.name }}</a>
+                                <div class="dropdown__submenu">
+                                    {% for i in category.about_pages.all %}
+                                    <div class="dropdown__link">
+                                        <a href="{% url 'aboutkeu_detail' i.pk %}" class="dropdown__link">{{ i.title }}</a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
 <!--                        <a href="#" class="dropdown__link">Mission, Vision, Value</a>-->
 <!--                        <a href="#" class="dropdown__link">Awards & Achievement</a>-->
 <!--                        <a href="#" class="dropdown__link">Alumni Success stories</a>-->

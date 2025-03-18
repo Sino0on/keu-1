@@ -19,11 +19,20 @@ class ProgramCategory(models.Model):
 
 
 class AboutKEU(Page):
+    category = models.ForeignKey('AboutCategory', on_delete=models.CASCADE, related_name='about_pages', blank=True, null=True)
+
     class Meta:
         pass
 
 
 class HeadCategory(models.Model):
+    name = models.CharField(max_length=123)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
+class AboutCategory(models.Model):
     name = models.CharField(max_length=123)
 
     def __str__(self):
