@@ -93,9 +93,9 @@ class ProgramListByCategoryView(DetailView):
 
         context = super().get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = Category.objects.filter(category=context['programcategory'])
+        context['categories'] = Category.objects.all()
         context['head_categories'] = HeadCategory.objects.all()
-        context['programs'] = Program.objects.filter(category__isnull=True)
+        context['programs'] = Program.objects.filter(category=context['programcategory'])
         context['aboutkeus'] = AboutCategory.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
         context['aboutkeu'] = AboutKEU.objects.all()[0]
