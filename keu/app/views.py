@@ -84,8 +84,8 @@ class ProgramListView(ListView):
 
 
 class ProgramListByCategoryView(DetailView):
-    model = ProgramCategory
-    queryset = ProgramCategory.objects.all()
+    model = HeadCategory
+    queryset = HeadCategory.objects.all()
     context_object_name = 'programcategory'
     template_name = 'programs.html'
 
