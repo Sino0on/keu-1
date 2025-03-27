@@ -75,13 +75,32 @@ class ProgramListView(ListView):
         context['projects'] = Project.objects.all()
         context['categories'] = Category.objects.filter(head_category__isnull=True)
         context['head_categories'] = HeadCategory.objects.all()
-        context['programs'] = Program.objects.all()
+        context['programs'] = Program.objects.filter(category__isnull=True)
         context['aboutkeus'] = AboutCategory.objects.all()
         context['news'] = News.objects.order_by('-date')[:3]
         context['aboutkeu'] = AboutKEU.objects.all()[0]
         context['abouts'] = About.objects.all()
         return context
 
+
+class ProgramListByCategoryView(DetailView):
+    model = ProgramCategory
+    queryset = ProgramCategory.objects.all()
+    context_object_name = 'programcategory'
+    template_name = 'programs.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
+        context['categories'] = Category.objects.filter(category=context['programcategory'])
+        context['head_categories'] = HeadCategory.objects.all()
+        context['programs'] = Program.objects.filter(category__isnull=True)
+        context['aboutkeus'] = AboutCategory.objects.all()
+        context['news'] = News.objects.order_by('-date')[:3]
+        context['aboutkeu'] = AboutKEU.objects.all()[0]
+        context['abouts'] = About.objects.all()
+        return context
 
 class ProgramDetailView(DetailView):
     model = Program

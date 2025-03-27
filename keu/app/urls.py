@@ -8,6 +8,7 @@ urlpatterns = [
     path('news/', NewsListView.as_view(), name='news'),
     path('news/<int:pk>/', DetailNews.as_view(), name='detail_news'),
     path('program/list', ProgramListView.as_view(), name='programs'),
+    path('program/list/<int:pk>', ProgramListByCategoryView.as_view(), name='programsbycategory'),
     path('project/list', ProjectListView.as_view(), name='projects'),
     path('program/<int:pk>', ProgramDetailView.as_view(), name='program_detail'),
     path('project/<int:pk>', ProjectDetailView.as_view(), name='project_detail'),

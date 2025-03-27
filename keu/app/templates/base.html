@@ -25,7 +25,7 @@
             <a href="{% url 'home' %}" class="header__logo">
                 <img src="{% static './media/icons/logo.png' %}" alt="logo" style="width: 100px;">
 <!--                <img src="./media/icons/logo.svg" alt="logo">-->
-                <h2>SRU KYRGYZ ECONOMIC UNIVERSITY NAMED AFTER M.Ryskulbekov</h2>
+                <h2>KYRGYZ ECONOMIC UNIVERSITY NAMED AFTER M.Ryskulbekov</h2>
             </a>
 
             <nav class="header__nav">
@@ -54,7 +54,7 @@
                 </div>
                 {% for i in head_categories %}
                 <div class="header__item dropdown">
-                    <a class="header__link" href="{% url 'programs' %}">{{ i.name }}</a>
+                    <a class="header__link" href="{% url 'programsbycategory' i.pk %}">{{ i.name }}</a>
 <!--                    <div class="dropdown">-->
 
                         <div class="dropdown__menu">
